@@ -1,3 +1,7 @@
+/*
+클래스 구현
+같은 내용의 객체를 여러게 만들기 위해 사용
+*/
 class food {
     constructor(name, country, ex) {
         this.name = name;
@@ -5,8 +9,14 @@ class food {
         this.ex = ex;
     }
 }
+/*
+다른 js파일에서 사용하기 위해 export를 사용
+여러 객체를 반복문을 돌리기 위해 배열을 만들고 class를 이용해 만든 객체를 
+집어 넣는다. 
+*/
 export let foodArr = [];
 
+// 생성한 객체를 foodArr에 넣는다.
 foodArr.push(new food(
     '라면', 
     "일본", 
@@ -55,10 +65,17 @@ foodArr.push(new food(
     "햄버거는 미국이 유명하지만 원조는 독일로 간편하고 생각보다 영양소가 균형있어 완전 식품이라고 불린다."
 ))
 
-
+//객체가 생성될 때 마다 html에 태그 생성과 동시에 객체 name 적용
+let ulTag = document.getElementsByClassName('imgUl')[0];
 for ( let i = 0; i < foodArr.length; i++ ) {
-    let spanTag = document.getElementsByClassName('foodName')[i];
-    spanTag.textContent = `${foodArr[i].name}`;
+    let liTag = document.createElement('li');
+    let imgTag = document.createElement('img');
+    let pTag = document.createElement('p');
+    
+    imgTag.src = `../img/${i}.jpg`
+    ulTag.appendChild(liTag);
+    liTag.appendChild(imgTag);
+    liTag.appendChild(pTag);
+    pTag.textContent = `${foodArr[i].name}`;
 }
-
 

@@ -44,6 +44,8 @@ body {background-color: antiquewhite;}
     margin: 1rem;
 }
 .imgWrap ul li img {
+    width: 16rem;
+    height: 11rem;
     border: 1.5px solid #aaa;
     border-radius: .5rem;
     cursor: pointer;
@@ -53,7 +55,7 @@ body {background-color: antiquewhite;}
     
 }
 .imgWrap ul li p {
-    color: aliceblue;
+    color: black;
 }
 .imgWrap ul li p {
     background-color: bisque;
