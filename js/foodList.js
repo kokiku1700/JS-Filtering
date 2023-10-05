@@ -71,8 +71,9 @@ for ( let i = 0; i < foodArr.length; i++ ) {
     let liTag = document.createElement('li');
     let imgTag = document.createElement('img');
     let pTag = document.createElement('p');
-    
-    imgTag.src = `../img/${i}.jpg`
+    liTag.className = 'fList'
+
+    imgTag.src = `../img/${foodArr[i].name}.jpg`
     ulTag.appendChild(liTag);
     liTag.appendChild(imgTag);
     liTag.appendChild(pTag);
